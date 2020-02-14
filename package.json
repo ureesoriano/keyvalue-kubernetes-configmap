@@ -4,13 +4,22 @@
   "description": "key-value store backed by kubernetes configmaps",
   "main": "index.js",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "test": "mocha --recursive test --ui mocha-cakes-2",
+    "test/watch": "mocha --recursive test --ui mocha-cakes-2 --watch"
+  },
   "author": "Oriol Soriano Vila",
   "license": "ISC",
   "dependencies": {
     "@kubernetes/client-node": "^0.11.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.0.1",
+    "mocha-cakes-2": "^3.3.0",
+    "nodemon": "^2.0.2",
+    "uuid": "^3.4.0"
+  },
   "keywords": [
     "keyvalue",
     "kubernetes",
