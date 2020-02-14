@@ -1,0 +1,19 @@
+{
+  "name": "keyvalue-kubernetes-configmap",
+  "version": "1.0.0",
+  "description": "key-value store backed by kubernetes configmaps",
+  "main": "index.js",
+  "private": true,
+  "scripts": {},
+  "author": "Oriol Soriano Vila",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": [
+    "keyvalue",
+    "kubernetes",
+    "configmap",
+    "kv",
+    "database"
+  ]
+}
