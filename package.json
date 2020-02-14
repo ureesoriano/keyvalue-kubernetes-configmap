@@ -7,7 +7,9 @@
   "scripts": {},
   "author": "Oriol Soriano Vila",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "@kubernetes/client-node": "^0.11.1"
+  },
   "devDependencies": {},
   "keywords": [
     "keyvalue",
