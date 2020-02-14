@@ -1,4 +1,4 @@
-.PHONY: build shell
+.PHONY: build shell test test/watch
 
 docker-run := docker run \
 	--rm -ti \
@@ -12,3 +12,9 @@ build:
 
 shell: build
 	$(docker-run) bash
+
+test: build
+	$(docker-run) npm run test
+
+test/watch: build
+	$(docker-run) npm run test/watch
