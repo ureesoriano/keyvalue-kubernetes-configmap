@@ -1,8 +1,11 @@
 .PHONY: build shell test test/watch
 
+KUBECONFIG ?= ~/.kube/config
 docker-run := docker run \
 	--rm -ti \
+	--env-file config/environment \
 	-v $(shell pwd):/code \
+	-v $(KUBECONFIG):/code/.kube/config \
 	keyvalue-kubernetes-configmap:latest
 
 build:
