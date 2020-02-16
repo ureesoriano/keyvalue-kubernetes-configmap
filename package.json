@@ -5,8 +5,8 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "test": "mocha --recursive test --ui mocha-cakes-2",
-    "test/watch": "mocha --recursive test --ui mocha-cakes-2 --watch"
+    "test": "mocha --unhandled-rejections=none --recursive test --ui mocha-cakes-2",
+    "test/watch": "mocha --unhandled-rejections=none --recursive test --ui mocha-cakes-2 --watch"
   },
   "author": "Oriol Soriano Vila",
   "license": "ISC",
@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "mocha": "^7.0.1",
     "mocha-cakes-2": "^3.3.0",
     "nodemon": "^2.0.2",
