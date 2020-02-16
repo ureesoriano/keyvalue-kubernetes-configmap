@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "description": "key-value store backed by kubernetes configmaps",
   "main": "index.js",
-  "private": true,
+  "private": false,
   "scripts": {
     "test": "mocha --unhandled-rejections=none --recursive test --ui mocha-cakes-2",
     "test/watch": "mocha --unhandled-rejections=none --recursive test --ui mocha-cakes-2 --watch"
   },
-  "author": "Oriol Soriano Vila",
+  "author": "Oriol Soriano Vila <oriolsoriano@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ureesoriano/keyvalue-kubernetes-configmap"
+  },
   "license": "ISC",
   "dependencies": {
     "@kubernetes/client-node": "^0.11.1"
