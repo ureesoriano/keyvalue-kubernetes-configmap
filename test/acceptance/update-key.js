@@ -31,7 +31,7 @@ Feature('Update key', () => {
     Then('the data in the configmap contains the updated value', async () => {
       const updatedConfigmap = await k8sClient.readNamespacedConfigMap(key, 'default')
 
-      updatedConfigmap.body.data.should.deep.equal({'answer': '42'});
+      updatedConfigmap.body.data.should.deep.equal({'value': JSON.stringify({'answer': '42'})});
     });
 
     after( async () => {
