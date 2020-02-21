@@ -46,10 +46,10 @@ keyvalueK8s.updateKey(configmapName, value);
 
 
 ## Authentication
-In order to authenticate against the Kubernetes API of your cluster, 3 authentication methods are supported:
-**1.** Via `KUBECONFIG` environment var.
-**2.** In-cluster.
-**3.** By injecting an already instantiated kubernetes client through the constructor.
+In order to authenticate against the Kubernetes API of your cluster, 3 authentication methods are supported:  
+**1.** Via `KUBECONFIG` environment var.  
+**2.** In-cluster.  
+**3.** By injecting an already instantiated kubernetes client through the constructor.  
 
 **1.** Following convention, **if the environment variable `KUBECONFIG` is set** and it contains the path to a kubeconfig file, `keyvalue-kubernetes-configmap` will read its content and attempt to authenticate against the cluster with it.
 
