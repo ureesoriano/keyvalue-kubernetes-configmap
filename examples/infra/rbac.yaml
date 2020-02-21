@@ -1,0 +1,38 @@
+---
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: keyvalue-k8s-example-service-account
+  namespace: default
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: keyvalue-k8s-example-role
+  namespace: default
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - configmaps
+    verbs:
+      - create
+      - get
+      - list
+      - update
+      - patch
+      - delete
+      - watch
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: keyvalue-k8s-example-role-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: keyvalue-k8s-example-role
+subjects:
+- kind: ServiceAccount
+  name: keyvalue-k8s-example-service-account
+  namespace: default
