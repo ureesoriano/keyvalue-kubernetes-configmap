@@ -6,7 +6,7 @@ Designed for in-cluster use; but it also supports authenticating from outside of
 
 
 ## Synopsis
-```
+```js
 const KeyValueK8s = require('keyvalue-kubernetes-configmap');
 
 const keyvalueK8s = new KeyValueK8s();
@@ -22,7 +22,7 @@ keyvalueK8s.updateKey(keyName, updatedValue);
 ##### Constructor
 Returns a new instance of `keyvalue-kubernetes-configmap`.  
 Supports injecting an already instantiated kubernetes client.
-```
+```js
 const keyvalueK8s = new KeyValueK8s();
 
 # Injecting a kubernetes client
@@ -32,13 +32,13 @@ const keyvalueK8s = new KeyValueK8s(kubernetesClient);
 ```
 ##### readKey
 Reads the and returns the content of the specified configmap.
-```
+```js
 const keyvalueK8s = new KeyValueK8s();
 const value = keyvalueK8s.readKey(configmapName);
 ```
 ##### updateKey
 Updates the content of the specified configmap with the specified value.
-```
+```js
 const keyvalueK8s = new KeyValueK8s();
 const value = {'answer': 42};
 keyvalueK8s.updateKey(configmapName, value);
@@ -58,7 +58,7 @@ Take into account that if you did not specify a service account on your containe
 The recommended approach here is provisioning a service account and set it as the service account in your application containers spec. No worries, a full setup of service account + role + role binding + container spec is provided in the [examples section](#Examples) `:)`
 
 **3.** Lastly, an already instantiated **kubernetes client can be injected** through the constructor:
-```
+```js
 const KubernetesClient = require('@kubernetes/client-node');
 const kubernetesClient = [...];
 
@@ -80,7 +80,7 @@ A fully working example of these resources can be found in the infra folder of t
 ## Examples
 A fully working example can be found in the [examples folder](https://github.com/ureesoriano/keyvalue-kubernetes-configmap/tree/master/examples).
 
-```
+```bash
 # clone the repo
 git clone git@github.com:ureesoriano/keyvalue-kubernetes-configmap.git
 cd keyvalue-kubernetes-config
