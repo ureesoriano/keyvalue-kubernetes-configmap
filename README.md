@@ -12,10 +12,14 @@ const KeyValueK8s = require('keyvalue-kubernetes-configmap');
 const keyvalueK8s = new KeyValueK8s();
 const keyName = 'my_configmap_name';
 
-const value = keyvalueK8s.readKey(keyName);
+await keyvalueK8s.createKey(keyName, {'answer': 43}); // creates the configmap
+
+const value = await keyvalueK8s.readKey(keyName);
 
 const updatedValue = {'answer': 42};
-keyvalueK8s.updateKey(keyName, updatedValue);
+await keyvalueK8s.updateKey(keyName, updatedValue);
+
+await keyvalueK8s.deleteKey(keyName); // deletes the configmap
 ```
 
 ## Methods
@@ -30,18 +34,30 @@ const KubernetesClient = require('@kubernetes/client-node');
 const kubernetesClient = [...];
 const keyvalueK8s = new KeyValueK8s(kubernetesClient);
 ```
-##### readKey
-Reads the and returns the content of the specified configmap.
+##### createKey
+Creates a new configmap, stores the specified value in its content and returns it.
 ```js
 const keyvalueK8s = new KeyValueK8s();
-const value = keyvalueK8s.readKey(configmapName);
+const value = await keyvalueK8s.createKey(configmapName, value);
+```
+##### readKey
+Reads and returns the content of the specified configmap.
+```js
+const keyvalueK8s = new KeyValueK8s();
+const value = await keyvalueK8s.readKey(configmapName);
 ```
 ##### updateKey
 Updates the content of the specified configmap with the specified value.
 ```js
 const keyvalueK8s = new KeyValueK8s();
 const value = {'answer': 42};
-keyvalueK8s.updateKey(configmapName, value);
+await keyvalueK8s.updateKey(configmapName, value);
+```
+##### deleteKey
+Deletes the specified configmap.
+```js
+const keyvalueK8s = new KeyValueK8s();
+await keyvalueK8s.deleteKey(configmapName);
 ```
 
 
@@ -107,7 +123,7 @@ node example.js
 
 ## Current Limitations
 At this point, be aware of the following relevant limitations:
-* createKey and deletekey methods are not yet implemented.  
+* ~~createKey and deleteKey methods are not yet implemented.~~
 * Only namespace `default` is supported.  
 * It is not possible yet to specify a kubernetes API version.  
 
