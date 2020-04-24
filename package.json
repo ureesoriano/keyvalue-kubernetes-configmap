@@ -22,7 +22,7 @@
     "chai-as-promised": "^7.1.1",
     "mocha": "^7.0.1",
     "mocha-cakes-2": "^3.3.0",
-    "nodemon": "^2.0.2",
+    "nodemon": "^2.0.3",
     "uuid": "^3.4.0"
   },
   "keywords": [
