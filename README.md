@@ -1,5 +1,5 @@
 ## Description
-Key-value store backed by kubernetes configmaps.
+Key-value store backed by kubernetes configmaps. test
 It exposes a create, read, update & delete API that transparently stores values in configmaps (IE: etcd).
 
 Designed for in-cluster use; but it also supports authenticating from outside of a Kubernetes cluster.
